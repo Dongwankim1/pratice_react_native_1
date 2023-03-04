@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {Component} from "react";
-import Heading from './component/Heading';
 import {Provider} from "react-redux";
+import {store} from "./store";
 
-export default class MyComponent extends Component{
+export default class HomeScreen extends Component{
     constructor() {
         super();
         this.state = {
@@ -18,7 +18,7 @@ export default class MyComponent extends Component{
     render() {
 
         return(
-            <Provider>
+            <Provider store={store}>
                 <View style={styles.container}>
                     <Text>Lets build UBER!</Text>
                 </View>
@@ -29,10 +29,9 @@ export default class MyComponent extends Component{
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
-        backgroundColor:'#f5f5f5'
-    },content:{
-        flex:1,
-        paddingTop:60
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
     }
 })
